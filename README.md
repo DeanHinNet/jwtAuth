@@ -21,7 +21,8 @@ JWT Auth is an authorization api using Json Web Tokens. For more information on 
 2. Authentication - Create api to return JWT Access Token and Refresh Token for use in protected routes. (sent to client and saved in local storage and session storage)
    
    A. Public Routes - Create public route for login, token refresh, and other public routes (this may be turned into a separate api/microservice for authentication and token exchange only).
-	  1. Login - provides access and refresh token upon successful authentication.
+
+	    1. Login - provides access and refresh token upon successful authentication.
             
             a. Match sent username and password to db (mocked).
             
@@ -55,6 +56,6 @@ JWT Auth is an authorization api using Json Web Tokens. For more information on 
                     
     B. Protected Routes - Add authentication layer to capture routes (for this example /user/ -> /user/:action et. al). If the JWT and headers are valid, continue with request, otherwise send error status.
 
-	1. Create protected routes for updating password, profile information, email etc. A JWT will need to be sent in order to post to these routes.
+    1. Create protected routes for updating password, profile information, email etc. A JWT will need to be sent in order to post to these routes.
 
     2. Add authentication layer to other apis with JWT secret to validate.
