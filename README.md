@@ -13,7 +13,9 @@ JWT Auth is an authorization api using Json Web Tokens. For more information on 
 # Game Plan for Creating Authentication API.
 
  1. Database - Create database to house user data and tokens/uuid.
+
     A. User DB - Userid, username, password, email etc. Use hash+salt to encrypt passwords in database, NO PLAIN TEXT!
+    
     B. Token DB - UUID/Refresh Token, userid, creation date, expiration date.
 
 2. Authentication - Create api to return JWT Access Token and Refresh Token for use in protected routes. (sent to client and saved in local storage and session storage)
