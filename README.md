@@ -27,7 +27,7 @@ Game Plan for creating authentication api.
                 (2) Generate Refresh token/uuid - it will be a UUID that is stored in the token db with userid, created at, expires at, etc.
                 (3) Send tokens to the client.
                 
-        2. Refresh - Create a refresh route where a refresh token can be sent to obtain a new access and refresh token. Refresh tokens will consist of a UUID and be stored in the database. This will be validated. Instead of a JWT refresh token, the UUID will allow for revocation of refresh token, blacklisting, and overall access control. Userid, username, and other info may be saved with the UUID/refresh token. The client can check the JWT to determine if it has expired or not. If the access token is expired, send refresh token to refresh endpoint to obtain new token and then proceed with previous request.
+      	2. Refresh - Create a refresh route where a refresh token can be sent to obtain a new access and refresh token. Refresh tokens will consist of a UUID and be stored in the database.
             a. Check UUID/refresh token in db.
             b. If it exists, continue with validation, else return error. Ask user to re-login.
 	         (1) If expiration date has passed, return error and ask user to re-login.
