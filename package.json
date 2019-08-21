@@ -1,23 +1,11 @@
 {
-  "name": "project-name",
+  "name": "jwt-auth",
   "version": "1.0.0",
-  "description": "",
+  "description": "An authentication API use to grant/revoke access/refresh tokens for protected routes.",
   "main": "index.js",
   "scripts": {
-    "test-init": "./node_modules/jasmine/bin/jasmine.js init",
-    "test": "./node_modules/jasmine/bin/jasmine.js",
-    "jest": "jest --watchAll",
-    "dev": "concurrently \"npm run react-dev\" \"npm run scss-dev\" \" npm run server-dev\"",
     "start": "nodemon -r dotenv/config src/server.js"
   },
-  "jest": {
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ]
-  },
-  "setupFiles": [
-    "./src/setupTests.js"
-  ],
   "repository": {
     "type": "git",
     "url": "http://www.deanhin.net"
@@ -32,25 +20,17 @@
     "bcrypt": "^3.0.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "1.18.3",
-    "compression": "^1.7.2",
     "concurrently": "^3.6.0",
-    "cookie-parser": "^1.4.3",
     "dotenv": "^8.1.0",
     "express": "4.16.3",
     "express-mysql-session": "^2.0.0",
     "express-session": "^1.15.6",
     "forever": "^0.15.3",
     "forever-monitor": "^1.7.1",
-    "immutable": "^3.8.2",
     "jsonwebtoken": "8.5.1",
     "moment": "^2.24.0",
     "request": "^2.87.0",
-    "uuid": "^3.3.3"
-  },
-  "devDependencies": {
-    "chai": "^4.1.2",
-    "jasmine": "^3.1.0",
-    "mocha": "^5.2.0",
+    "uuid": "^3.3.3",
     "node": "8.11.0",
     "nodemon": "^1.17.5",
     "npm": "6.1.0"

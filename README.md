@@ -13,8 +13,10 @@ JWT Auth is an authorization api using Json Web Tokens. For more information on 
 # Game Plan for Creating Authentication API.
 
  1. Database - Create database to house user data and tokens/uuid.
+
      A. User DB - Userid, username, password, email etc. Use hash+salt to
         encrypt passwords in database, NO PLAIN TEXT!
+
         B. Token DB - UUID/Refresh Token, userid, creation date, expiration date.
 
 2. Authentication - Create api to return JWT Access Token and Refresh Token for use in protected routes. (sent to client and saved in local storage and session storage)
@@ -23,8 +25,11 @@ JWT Auth is an authorization api using Json Web Tokens. For more information on 
 	  1. Login - provides access and refresh token upon successful authentication.
            a. Match sent username and password to db (mocked).
             b. If username and passwords match, continue, else send error message.
+
                 (1) Generate Access token - it will have expiration of 15 min and payload with userid, username, firstName, lastName, etc.
+
                 (2) Generate Refresh token/uuid - it will be a UUID that is stored in the token db with userid, created at, expires at, etc.
+                
                 (3) Send tokens to the client.
                 
         2. Refresh - Create a refresh route where a refresh token can be sent to obtain a new access and refresh token. Refresh tokens will consist of a UUID and be stored in the database. This will be validated. Instead of a JWT refresh token, the UUID will allow for revocation of refresh token, blacklisting, and overall access control. Userid, username, and other info may be saved with the UUID/refresh token. The client can check the JWT to determine if it has expired or not. If the access token is expired, send refresh token to refresh endpoint to obtain new token and then proceed with previous request.
