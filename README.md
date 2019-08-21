@@ -1,16 +1,16 @@
-Welcome to Auth with JWT!
+# Welcome to Auth with JWT!
 
 JWT Auth is an authorization api using Json Web Tokens. For more information on JWT please see the following https://en.wikipedia.org/wiki/JSON_Web_Token. This will allow the user to enter their username and password once (within a specified period of time) and continue to use APIs that are restricted and not public to all users.
 
-#Installation
+# Installation
 
 `npm install`
 
-#To run node server
+# Running Node Server
 
 `npm start`
 
-#Game Plan for creating authentication api.
+# Game Plan for Creating Authentication API.
 
  1. Database - Create database to house user data and tokens/uuid.
      A. User DB - Userid, username, password, email etc. Use hash+salt to
